@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Axios</title>
+
+<!-- Importing Axios library -->
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!-- // => Axios Importing Link -->
+
+<!----------------------------------->
+
+</head>
+
+<body>
+
+    <div id="results" style="display: none;"></div>
+    
+    <script>
+
+        let link = "https://jsonplaceholder.typicode.com/todos/1"; // => Linking API 
+
+        axios.get(`${link}`).then(response => {showResults(response.data)}); // => Queries (Get) building and "showResults" function executing
+        
+        function showResults(adress){ 
+        
+            document.getElementById('results').style.display = 'block' // => Display Block
+        
+            document.getElementById('results').innerHTML = `${adress.userId} ` // => API return
+        
+            } 
+
+    </script>
+
+</body>
+
+</html>
